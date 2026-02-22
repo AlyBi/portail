@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portail Excel</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: #003366;
+            color: white;
+        }
+
+        header img {
+            width: 120px;
+            height: 110px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .main-container {
+            padding: 0 40px 40px 40px;
+        }
+
+        /* BLOCS DU HAUT */
+        .sections-container {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        /* Ajout d'un décalage depuis le header pour les images du haut */
+        .sections-container {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 40px;
+            margin-top: 30px;
+            /* <-- ici on décale les blocs du haut vers le bas */
+        }
+
+        .image-section {
+            flex: 1;
+            height: 280px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .clickable {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .image-section h2 {
+            position: absolute;
+            bottom: 10px;
+            left: 5px;
+            right: 5px;
+            margin: 0;
+            padding: 5px;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            font-size: 1.2em;
+        }
+
+        /* RUBRIQUES */
+        .rubriques-ligne {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .rubrique-colonne {
+            flex: 0 0 18%;
+            background-color: #003366;
+            border-radius: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .rubrique-colonne h2 {
+            margin: 0 0 15px 0;
+            padding: 10px;
+            color: white;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 6px;
+            font-size: 1.1em;
+        }
+
+        /* images verticales indépendantes */
+        .rubrique-images {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .image-box {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: none;
+            /* supprime le contour */
+            background-color: white;
+        }
+
+        .image-box {
+            height: 220px;
+            /* hauteur fixe */
+        }
+
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            /* garde les proportions */
+            display: block;
+        }
+
+
+        .image-box span {
+            position: absolute;
+            bottom: 5px;
+            left: 5px;
+            right: 5px;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            font-size: 0.9em;
+            padding: 4px;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img src="logoo.jpg">
+        <h1>Portail Excel - Gestion des Données</h1>
+        <img src="loogo.jpg">
+    </header>
+
+    <div class="main-container">
+
+        <!-- BLOCS DU HAUT -->
+        <div class="sections-container">
+            <div class="image-section" style="background-image:url('mc (2).jpg'); position:relative;">
+
+                <a class="clickable" href="main_courante.xlsx">
+                    <h2>Main Courante</h2>
+                </a>
+
+                <!-- AJOUT DU COMPTEUR -->
+                <div id="compteur" style="
+            position:absolute;
+            top:10px;
+            right:15px;
+            font-size:32px;
+            font-weight:bold;
+            color:white;
+        ">
+                    ...
+                </div>
+            </div>
+
+
+            <div class="image-section" style="background-image:url('graphique.png')">
+                <a class="clickable" href="graphique.xlsx">
+
+                    <h2>Graphiques</h2>
+                </a>
+            </div>
+            <div class="image-section" style="background-image:url('carte\ qc.jpg')">
+                <a class="clickable" href="carte_quartier.xlsx">
+                    <h2>Carte de Quartier</h2>
+                </a>
+            </div>
+        </div>
+
+        <!-- RUBRIQUES -->
+        <div class="rubriques-ligne">
+
+            <!-- CONTROLE -->
+            <div class="rubrique-colonne">
+                <h2>Contrôle</h2>
+                <div class="rubrique-images">
+                    <a class="image-box" href="ET.xlsx" target="_blank"><img
+                            src="étalage  et terrasse.jpg"><span>Terrasses
+                            et étalages</span></a>
+                    <a class="image-box" href="CHANT.xlsx"><img src="chantier.jpg"><span>Chantiers</span></a>
+                    <a class="image-box" href="FADMIN.xlsx"><img src="fermeture admini.png"><span>Fermetures
+                            administratives </span></a>
+                    <a class="image-box" href="deboisson.xlsx"><img src="licence4.png"><span>DébitS de
+                            boissons </span></a>
+                </div>
+            </div>
+
+            <!-- SALUBRITÉ -->
+            <div class="rubrique-colonne">
+                <h2>Salubrité</h2>
+                <div class="rubrique-images">
+                    <a class="image-box" href="BAC.xlsx"><img src="bacs.jpg"><span>Bacs</span></a>
+                    <a class="image-box" href="tag.xlsx"><img src="garffitis.jpg"><span>Graffitis</span></a>
+                    <a class="image-box" href="aff.xlsx"><img src="affichage.jpg"><span>Affichages</span></a>
+                    <a class="image-box" href="azotes.jpg"><img src="azotes.jpg"><span>Protoxyde
+                            d'azote</span></a>
+                </div>
+            </div>
+
+            <!-- COORDINATION -->
+            <div class="rubrique-colonne">
+                <h2>Coordination</h2>
+                <div class="rubrique-images">
+                    <a class="image-box" href="partenaire.xlsx"><img src="Partenaires.jpg"><span>Partenaires</span></a>
+                    <a class="image-box" href="blci.xlsx"><img src="BLCI (2).jpg"><span>BLCI</span></a>
+                    <a class="image-box" href="dmrsolen.xlsx"><img src="dmr...jpg"><span>DMR
+                            Solen</span></a>
+                    <a class="image-box" href="espace ver.xlsx"><img src="parcs et jadins.jpg"><span>Espace
+                            vert</span></a>
+                </div>
+            </div>
+
+            <!-- VOIE PUBLIQUE -->
+            <div class="rubrique-colonne">
+                <h2>Voie Publique</h2>
+                <div class="rubrique-images">
+                    <a class="image-box" href=".xlsx"><img src="code de la route.jpg"><span>Croûte</span></a>
+                    <a class="image-box" href="pecole.xlsx"><img src="points école.png"><span>École</span></a>
+                    <a class="image-box" href="epave.xlsx"><img src="traffic-sign-6627_1280.png"><span>Épave</span></a>
+                    <a class="image-box" href="fvoie.xlsx"><img src="fermetures voies.jpg"><span>Foire
+                            voie</span></a>
+                </div>
+            </div>
+
+            <!-- GESTION -->
+            <div class="rubrique-colonne">
+                <h2>Gestion</h2>
+                <div class="rubrique-images">
+                    <a class="image-box" href="veille.jur.xlsx"><img src="calendrier.jpg"><span>Agenda</span></a>
+                    <a class="image-box" href="saga.xlsx"><img src="Saga.jpg"><span>Saga</span></a>
+                    <a class="image-box" href="form.xlsx"><img src="formation (2).jpg"><span>Formations</span></a>
+                    <a class="image-box" href="veil jur.xlsx"><img src="veille juridique..jpg"><span>Veille
+                            juridique</span></a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer>
+        Portail de Gestion des Données – Tous droits réservés
+    </footer>
+    <!-- <iframe src="compteur.txt" id="loader" style="display:none;"></iframe> -->
+
+    <!-- <script>
+        window.onload = function () {
+            var iframe = document.createElement("iframe");
+            iframe.style.display = "none";
+            iframe.src = "compteur.txt";
+
+            iframe.onload = function () {
+                try {
+                    var doc = iframe.contentDocument || iframe.contentWindow.document;
+                    var texte = doc.body.textContent.trim();
+                    document.getElementById("compteur").innerText = texte;
+                } catch (e) {
+                    document.getElementById("compteur").innerText = "Erreur de lecture";
+                }
+            };
+
+            document.body.appendChild(iframe);
+        };
+    </script> -->
+    <!-- <script>
+        window.onload = function () {
+            fetch("https://onedrive.live.com/?id=%2Fpersonal%2Fed10399696b3ef8f%2FDocuments%2Fcompteur%2Etxt&parent=%2Fpersonal%2Fed10399696b3ef8f%2FDocuments")
+                .then(r => r.text())
+                .then(t => {
+                    document.getElementById("compteur").innerText = t.trim();
+                })
+                .catch(e => {
+                    document.getElementById("compteur").innerText = "Erreur de lecture";
+                });
+        };
+    </script>s -->
+
+    <script>
+        window.onload = function () {
+            fetch("https://gist.githubusercontent.com/AlyBi/69641e9ff82e151e64f9c9d429e1062b/raw/compteur.txt")
+
+                .then(r => r.text())
+                .then(t => {
+                    document.getElementById("compteur").innerText = t.trim();
+                })
+                .catch(e => {
+                    document.getElementById("compteur").innerText = "Erreur de lecture";
+                });
+        };
+    </script>
+
+
+    <!-- cloudPath = Environ("OneDriveCommercial") & "\compteur.txt" -->
+
+
+
+</body>
+
+
+</html>
